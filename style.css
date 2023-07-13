@@ -1,0 +1,118 @@
+#report-card {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgb(50, 52, 65);
+    max-width: 340px;
+}
+
+.scores {
+    padding: 5px;
+    background-color: rgb(68, 75, 90);
+}
+
+.scores > h1 {
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+ul > li {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin: 5px;
+}
+
+.prompt {
+    width: 250px;
+}
+
+.score-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.one {
+    background-color: rgb(255, 68, 80);
+}
+
+.two {
+    background-color: rgb(255, 200, 0);
+}
+
+.three {
+    background-color: rgb(86, 212, 0);
+}
+
+.five {
+    background-color: rgb(0, 227, 230);
+}
+
+.container>.chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 340px;
+}
+
+@property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+  }
+  
+  .pie {
+    --p:46;
+    --b:calc(.125 * var(--w));
+    --c:rgb(206, 203, 22);
+    --w:250px;
+    
+    width:var(--w);
+    aspect-ratio: 1;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    margin:5px;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+    font-size:25px;
+    font-weight:bold;
+    font-family:sans-serif;
+  }
+
+  .pie::before, .pie::after {
+    content:"";
+    position:absolute;
+    border-radius:50%;
+  }
+
+  .pie::before {
+    inset:0;
+    background:
+      conic-gradient(var(--c) calc(var(--p)*1%),rgb(83, 94, 110) 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  }
+
+  .pie::after {
+    transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+  }
+
+  .animate {
+    animation:p 1s .5s both;
+  }
+
+  @keyframes p {
+    from{--p:0}
+  }
