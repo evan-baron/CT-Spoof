@@ -1,18 +1,50 @@
+* {
+    box-sizing: border-box !important;
+}
+
 #report-card {
+    font-family: 'Calibri';
     display: flex;
     flex-direction: column;
     color: white;
     background-color: rgb(50, 52, 65);
-    max-width: 340px;
+    width: 100%;
+}
+
+#report-card > .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.5rem !important;
+    margin-top: 1.25rem !important;
+}
+
+h2 {
+    font-size: 1.65rem !important;
+    margin: 5px 0 !important;
 }
 
 .scores {
-    padding: 5px;
+    padding: 0 5px 1rem 5px;
     background-color: rgb(68, 75, 90);
+    width: 100%;
 }
 
 .scores > h1 {
     text-align: center;
+    margin-bottom: 1.5rem !important;
+}
+
+.average-score {
+    color: var(--c);
+    font-size: 5rem;
+}
+
+.out-of {
+    font-weight: 200;
 }
 
 ul {
@@ -23,20 +55,18 @@ ul {
 
 ul > li {
     display: flex;
+    font-size: 1.25rem;
     gap: 15px;
     align-items: center;
-    margin: 5px;
-}
-
-.prompt {
-    width: 250px;
+    margin: .5rem;
 }
 
 .score-circle {
+    font-size: 1.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
+    min-width: 30px !important;
     height: 30px;
     border-radius: 100%;
 }
@@ -62,7 +92,7 @@ ul > li {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 340px;
+    padding-bottom: 1rem;
 }
 
 @property --p{
