@@ -169,18 +169,26 @@
 @media screen and (max-width: 500px) {
 
     .page-container {
+        box-sizing: border-box;
         max-width: 400px;
         width: 100%;
         min-height: 100vh;
+        margin: 0px !important;
+        padding: 0px !important;
     }
 
     .report-card {
         flex-direction: column;
-        width: 100%;
+        width: 100vw;
+        box-shadow: none;
     }
 
     .chart-container, .scorecard-container {
-        width: 100%;
+        width: 100vw;
+    }
+
+    .prompts-container {
+        padding: 0px;
     }
     
 }
