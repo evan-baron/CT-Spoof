@@ -5,21 +5,25 @@
 
 .page-container {
     box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.input-form {
+    display: none;
+}
+
 .report-card {
     position: relative;
     display: flex;
-    width: 95%;
-    max-width: 1200px;
+    width: 1200px;
     color: white;
     font-family: 'Avenir';
+    box-shadow: 0px 0px 100px 0px rgb(15, 15, 15);
 }
 
 /* CHART CONTAINER STUFF BELOW */
@@ -43,8 +47,8 @@
 }
 
 .section-title {
-    font-size: 2.5rem;
-    align-self: center;
+    font-size: 3rem;
+    text-align: center;
 }
 
 .assessor, .result, .next-step, .out-of {
@@ -105,12 +109,14 @@
     padding: 1.5rem 0 0 0;
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 60%;
     background: rgb(68, 75, 90);
     line-height: 1.2;
 }
 
 .prompts-container {
+    width: 90%;
     padding: 1.5rem 3rem;
     display: flex;
     flex-direction: column;
@@ -137,7 +143,7 @@
 }
 
 .prompt-section {
-    font-size: 1.5rem;;
+    font-size: 1.5rem;
 }
 
 .one {
@@ -158,6 +164,25 @@
 
 .five {
     background: rgb(0, 230, 233);
+}
+
+@media screen and (max-width: 400px) {
+
+    .page-container {
+        max-width: 400px;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    .report-card {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .chart-container, .scorecard-container {
+        width: 100%;
+    }
+    
 }
 
 /* ANIMATION STUFF BELOW */
