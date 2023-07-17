@@ -179,7 +179,6 @@ body {
 
     .page-container {
         box-sizing: border-box;
-        max-width: 400px;
         width: 100%;
         min-height: 100vh;
         margin: 0px !important;
@@ -188,12 +187,12 @@ body {
 
     .report-card {
         flex-direction: column;
-        width: 100vw;
+        width: 100%;
         box-shadow: none;
     }
 
     .chart-container, .scorecard-container {
-        width: 100vw;
+        width: 100%;
     }
 
     .prompts-container {
