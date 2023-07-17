@@ -3,8 +3,13 @@
     src: url(./Avenir\ Next\ LT\ Pro.ttf);
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body {
-    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .page-container {
@@ -195,8 +200,9 @@ body {
         padding: 0px;
     }
 
-    .section-title {
+    .scorecard-container > .section-title {
         font-size: 2.5rem;
+        margin-bottom: .5rem;
     }
     
 }
