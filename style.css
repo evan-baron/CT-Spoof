@@ -3,6 +3,10 @@
     src: url(./Avenir\ Next\ LT\ Pro.ttf);
 }
 
+body {
+    overflow: hidden;
+}
+
 .page-container {
     box-sizing: border-box;
     width: 100%;
