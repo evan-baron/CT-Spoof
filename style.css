@@ -17,18 +17,95 @@ body {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+/* INPUT FORM STUFF BELOW */
+
 .input-form {
-    display: none;
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    color: rgb(225, 225, 225);
+    background: rgb(49, 54, 64);
+    border: 1px solid black;
 }
+
+.feedback-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.feedback-container > .section-title {
+    margin: 1rem;
+}
+
+.prompt-radio-container {
+    box-sizing: border-box;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+input {
+    border-radius: 0%;
+    border: none;
+    height: 2.5rem;
+    width: 80%;
+    font-size: 1.5rem;
+    text-indent: .5rem;
+    color: rgba(225, 225, 225, .75);
+    background-color: rgb(68, 75, 90);
+    box-shadow: inset 1px 1px 5px rgb(15, 15, 15);
+}
+
+input::placeholder {
+    left: 1rem;
+    color: rgba(225, 225, 225, .5);
+}
+
+input:focus {
+    color: rgb(225, 225, 225);
+    outline: none !important;
+    border: 1px solid rgb(225, 225, 225);
+}
+
+.radio-row {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.radio-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border: 1px solid black;
+    border-radius: 100%;
+}
+
+button {
+    align-self: center;
+    width: 15rem;
+    height: 3rem;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+/* REPORT CARD STUFF BELOW */
 
 .report-card {
     position: relative;
-    display: flex;
+    display: none;
     width: 1200px;
     color: white;
     font-family: 'Avenir';
