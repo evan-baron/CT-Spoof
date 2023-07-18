@@ -101,7 +101,6 @@ input:focus {
     min-width: 2.25rem;
     aspect-ratio: 1;
     border-radius: 100%;
-    border: 1px solid rgb(15, 15, 15);
     box-shadow: inset 0px 0px 5px rgb(15, 15, 15);
     background-color: rgb(68, 75, 90);
 }
