@@ -25,23 +25,33 @@ body {
 /* INPUT FORM STUFF BELOW */
 
 .input-form {
+    font-family: 'Avenir';
     display: flex;
     justify-content: center;
     width: 80vw;
     color: rgb(225, 225, 225);
     background: rgb(49, 54, 64);
-    border: 1px solid black;
+    box-shadow: 0px 0px 100px 0px rgb(15, 15, 15);
+
 }
 
 .feedback-container {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+}
+
+.scale {
+    align-self: center;
+    margin-bottom: 1rem;
 }
 
 .feedback-container > .section-title {
-    margin: 1rem;
+    margin-top: 1rem;
+}
+
+.input-container {
+    margin-bottom: 1.25rem;
 }
 
 .prompt-radio-container {
@@ -54,7 +64,7 @@ body {
     padding: 0 1rem;
 }
 
-input {
+.input-prompt {
     border-radius: 0%;
     border: none;
     height: 2.5rem;
@@ -80,17 +90,50 @@ input:focus {
 .radio-row {
     display: flex;
     justify-content: space-around;
-    width: 20%;
+    gap: 1rem;
 }
 
 .radio-button {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1.5rem;
+    min-width: 2.25rem;
     aspect-ratio: 1;
-    border: 1px solid black;
     border-radius: 100%;
+    border: 1px solid rgb(15, 15, 15);
+    box-shadow: inset 0px 0px 5px rgb(15, 15, 15);
+    background-color: rgb(68, 75, 90);
+}
+
+.rb-1:active {
+    border: 2px solid rgb(255, 64, 76);
+    box-shadow: inset 0px 0px 5px rgb(255, 64, 76),
+                inset 0px 0px 10px rgb(255, 64, 76);
+}
+
+.rb-2:active {
+    border: 2px solid rgb(255, 201, 0);
+    box-shadow: inset 0px 0px 5px rgb(255, 201, 0),
+                inset 0px 0px 10px rgb(255, 201, 0);
+}
+
+.rb-3:active {
+    border: 2px solid rgb(90, 215, 0);
+    box-shadow: inset 0px 0px 5px rgb(90, 215, 0),
+                inset 0px 0px 10px rgb(90, 215, 0);
+}
+
+.rb-4:active {
+    border: 2px solid rgb(166, 0, 243);
+    box-shadow: inset 0px 0px 5px rgb(166, 0, 243),
+                inset 0px 0px 10px rgb(166, 0, 243);
+}
+
+.rb-5:active {
+    border: 2px solid rgb(0, 230, 233);
+    box-shadow: inset 0px 0px 5px rgb(0, 230, 233),
+                inset 0px 0px 10px rgb(0, 230, 233);
 }
 
 button {
@@ -245,7 +288,7 @@ button {
 }
 
 .four {
-
+    background: rgb(166, 0, 243);
 }
 
 .five {
