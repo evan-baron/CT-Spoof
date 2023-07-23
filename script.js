@@ -221,6 +221,7 @@ function generateReport() {
     }
     parentExceeds.setHTML('Exceeds & Far Exceeds Expectations');
 
+    //tests if assessee and assessor filled out
     if (assessor.value == '') {
         if (assessee.value == '') {
             alert("You must input an Assessee!");
@@ -233,7 +234,7 @@ function generateReport() {
         if (assessee.value == '') {
             alert("You must input an Assessee!");
             assessee.focus();
-        }
+        } 
     }
 
     //push feedback into array
@@ -250,6 +251,13 @@ function generateReport() {
             document.getElementById('input-prompt'+i).focus();
             break;
         }
+    }
+
+    //test if feedback
+    if (!feedbackArr.length == '') {
+        document.getElementById('input-form').style.display = 'none'
+        document.getElementById('report-card').style.display = 'flex'
+        document.getElementById('button-container').style.display = 'flex'
     }
 
     //setting assessee name
@@ -400,10 +408,6 @@ function generateReport() {
     } else {
         document.getElementById('exceeds-section').style.display = 'block';
     }
-
-    document.getElementById('input-form').style.display = 'none'
-    document.getElementById('report-card').style.display = 'flex'
-    document.getElementById('button-container').style.display = 'flex'
 
 };
 
