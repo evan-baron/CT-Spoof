@@ -13,7 +13,7 @@
 
     <section class="page-container">
 
-        <section class="input-form">
+        <section class="input-form" id="input-form">
             <div class="feedback-container">
                 <div class="section-title">CT Spoof Feedback Form</div>
                 <div class="scale">(Rate from 1 to 5)</div>
@@ -146,7 +146,7 @@
             </div>
         </section>
 
-        <section class="report-card">
+        <section class="report-card" id="report-card">
 
             <section class="chart-container">
                 <div class="top-text">
@@ -174,47 +174,20 @@
                 <div class="section-title">Scores by Behavior</div>
                 <div class="prompts-container">
                     <div class="prompt-section" id="missed-section">Missed & Below Expectations
-                        <div class="line-container">
-                            <div class="score-circle two">2</div>
-                            <div class="prompt">Breathing Too Loud</div>
-                        </div>
-                        <div class="line-container">
-                            <div class="score-circle two">2</div>
-                            <div class="prompt">Asking Too Many Questions</div>
-                        </div>
-                        <div class="line-container">
-                            <div class="score-circle one">1</div>
-                            <div class="prompt">Did Not Ask Enough Questions</div>
-                        </div>
-                        <div class="line-container">
-                            <div class="score-circle one">1</div>
-                            <div class="prompt">Lack of Understanding and Application of MEDDIC</div>
-                        </div>
-                        <div class="line-container">
-                            <div class="score-circle one">1</div>
-                            <div class="prompt">Did Not Close the Business</div>
-                        </div>
                     </div>
                     <div class="prompt-section" id="meets-section">Meets Expectations
-                        <div class="line-container">
-                            <div class="score-circle three">3</div>
-                            <div class="prompt">You Pronounced the Name of the Company Right</div>
-                        </div>
-                        <div class="line-container">
-                            <div class="score-circle three">3</div>
-                            <div class="prompt">On Video</div>
-                        </div>
                     </div>
                     <div class="prompt-section" id="exceeds-section">Exceeds & Far Exceeds Expectations
-                        <div class="line-container">
-                            <div class="score-circle five">5</div>
-                            <div class="prompt">Fish Tank</div>
-                        </div>
                     </div>
                 </div>
             </section>
-
+            
         </section>
+
+        <div class="button-container" id="button-container">
+            <div class="go-back" id="go-back" onclick="goBack()">Back</div>
+            <div class="new-report" id="new-report" onclick="newReport()">New Report</div>
+        </div>
 
     </section>
 

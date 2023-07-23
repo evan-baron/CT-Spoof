@@ -22,6 +22,28 @@ body {
     flex-direction: column;
 }
 
+.button-container {
+    box-sizing: border-box;
+    display: none;
+    width: 1200px;
+    justify-content: flex-end;
+    font-size: 2rem;
+    font-family: 'Avenir';
+    padding: 1rem;
+    gap: 2rem;
+    z-index: 2;
+}
+
+.go-back:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.new-report:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
 /* INPUT FORM STUFF BELOW */
 
 .input-form {
@@ -197,7 +219,7 @@ button:active {
 
 .report-card {
     position: relative;
-    display: flex;
+    display: none;
     width: 1200px;
     color: white;
     font-family: 'Avenir';
@@ -350,23 +372,23 @@ button:active {
     font-size: 1.5rem;
 }
 
-.one {
-    background: rgb(255, 64, 76)
+.circle1 {
+    background: rgb(255, 64, 76);
 }
 
-.two {
+.circle2 {
     background: rgb(255, 201, 0);
 }
 
-.three {
+.circle3 {
     background: rgb(90, 215, 0);
 }
 
-.four {
+.circle4 {
     background: rgb(166, 0, 243);
 }
 
-.five {
+.circle5 {
     background: rgb(0, 230, 233);
 }
 

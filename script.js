@@ -202,6 +202,25 @@ function generateReport() {
     meets.splice(0, meets.length);
     exceeds.splice(0, exceeds.length);
 
+    //removes score data
+    const parentMissed = document.getElementById('missed-section');
+    while (parentMissed.firstChild) {
+        parentMissed.firstChild.remove();
+    }
+    parentMissed.setHTML('Missed & Below Expectations');
+
+    const parentMeets = document.getElementById('meets-section');
+    while (parentMeets.firstChild) {
+        parentMeets.firstChild.remove();
+    }
+    parentMeets.setHTML('Meets Expectations');
+
+    const parentExceeds = document.getElementById('exceeds-section');
+    while (parentExceeds.firstChild) {
+        parentExceeds.firstChild.remove();
+    }
+    parentExceeds.setHTML('Exceeds & Far Exceeds Expectations');
+
     if (assessor.value == '') {
         if (assessee.value == '') {
             alert("You must input an Assessee!");
@@ -292,6 +311,77 @@ function generateReport() {
         }
     }
 
+    //sorts feedback arrays
+    missed.sort(function(a, b) {
+        return parseInt(a.rating) - parseInt(b.rating)
+    })
+
+    meets.sort(function(a, b) {
+        return parseInt(a.rating) - parseInt(b.rating)
+    })
+
+    exceeds.sort(function(a, b) {
+        return parseInt(a.rating) - parseInt(b.rating)
+    })
+
+    //creates score section data
+    //missed data
+    for (let i=0; i<missed.length; i++) {
+        const lineDiv = document.createElement('div')
+        lineDiv.setAttribute('class', 'line-container')
+        lineDiv.setAttribute('id', 'missed-line'+i)
+        document.getElementById('missed-section').appendChild(lineDiv)
+        
+        const circleDiv = document.createElement('div')
+        circleDiv.setAttribute('class','score-circle circle'+missed[i].rating)
+        document.getElementById('missed-line'+i).appendChild(circleDiv)
+
+        const promptDiv = document.createElement('div')
+        promptDiv.setAttribute('class', 'prompt')
+        document.getElementById('missed-line'+i).appendChild(promptDiv)
+        
+        document.getElementById('missed-line'+i).children[0].setHTML(missed[i].rating)
+        document.getElementById('missed-line'+i).children[1].setHTML(missed[i].feedback)
+    }
+
+    //meets data
+    for (let i=0; i<meets.length; i++) {
+        const lineDiv = document.createElement('div')
+        lineDiv.setAttribute('class', 'line-container')
+        lineDiv.setAttribute('id', 'meets-line'+i)
+        document.getElementById('meets-section').appendChild(lineDiv)
+        
+        const circleDiv = document.createElement('div')
+        circleDiv.setAttribute('class','score-circle circle'+meets[i].rating)
+        document.getElementById('meets-line'+i).appendChild(circleDiv)
+
+        const promptDiv = document.createElement('div')
+        promptDiv.setAttribute('class', 'prompt')
+        document.getElementById('meets-line'+i).appendChild(promptDiv)
+        
+        document.getElementById('meets-line'+i).children[0].setHTML(meets[i].rating)
+        document.getElementById('meets-line'+i).children[1].setHTML(meets[i].feedback)
+    }
+
+    //exceeds data
+    for (let i=0; i<exceeds.length; i++) {
+        const lineDiv = document.createElement('div')
+        lineDiv.setAttribute('class', 'line-container')
+        lineDiv.setAttribute('id', 'exceeds-line'+i)
+        document.getElementById('exceeds-section').appendChild(lineDiv)
+        
+        const circleDiv = document.createElement('div')
+        circleDiv.setAttribute('class','score-circle circle'+exceeds[i].rating)
+        document.getElementById('exceeds-line'+i).appendChild(circleDiv)
+
+        const promptDiv = document.createElement('div')
+        promptDiv.setAttribute('class', 'prompt')
+        document.getElementById('exceeds-line'+i).appendChild(promptDiv)
+        
+        document.getElementById('exceeds-line'+i).children[0].setHTML(exceeds[i].rating)
+        document.getElementById('exceeds-line'+i).children[1].setHTML(exceeds[i].feedback)
+    }
+
     //shows score sections
     if (missed.length == '') {
         document.getElementById('missed-section').style.display = 'none';
@@ -311,7 +401,9 @@ function generateReport() {
         document.getElementById('exceeds-section').style.display = 'block';
     }
 
-    console.log(feedbackArr);
+    document.getElementById('input-form').style.display = 'none'
+    document.getElementById('report-card').style.display = 'flex'
+    document.getElementById('button-container').style.display = 'flex'
 
 };
 
@@ -331,4 +423,15 @@ function getRating(param) {
             return param.parentElement.children[1].children[i].getAttribute('value');
         }
     }
+};
+
+//go back
+function goBack() {
+    document.getElementById('input-form').style.display = 'flex'
+    document.getElementById('report-card').style.display = 'none'
+    document.getElementById('button-container').style.display = 'none'
+}
+
+function newReport() {
+    location.reload();
 }
