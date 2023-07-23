@@ -32,7 +32,40 @@ body {
     color: rgb(225, 225, 225);
     background: rgb(49, 54, 64);
     box-shadow: 0px 0px 100px 0px rgb(15, 15, 15);
+}
 
+.assessor-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    gap: .5rem;
+}
+
+.assessor-container > p {
+    font-size: 1.5rem;
+}
+
+.assess-input {
+    border-radius: 0%;
+    border: none;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    text-indent: .5rem;
+    color: rgba(225, 225, 225, .75);
+    background-color: rgb(68, 75, 90);
+    box-shadow: inset 1px 1px 5px rgb(15, 15, 15);
+}
+
+.assess-input::placeholder {
+    left: 1rem;
+    color: rgba(225, 225, 225, .5);
+}
+
+.assess-input:focus {
+    color: rgb(225, 225, 225);
+    outline: none !important;
+    border: 1px solid rgb(225, 225, 225);
 }
 
 .feedback-container {
@@ -76,12 +109,12 @@ body {
     box-shadow: inset 1px 1px 5px rgb(15, 15, 15);
 }
 
-input::placeholder {
+.input-prompt::placeholder {
     left: 1rem;
     color: rgba(225, 225, 225, .5);
 }
 
-input:focus {
+.input-prompt:focus {
     color: rgb(225, 225, 225);
     outline: none !important;
     border: 1px solid rgb(225, 225, 225);
@@ -105,34 +138,39 @@ input:focus {
     background-color: rgb(68, 75, 90);
 }
 
-.rb-1:active {
-    border: 2px solid rgb(255, 64, 76);
-    box-shadow: inset 0px 0px 5px rgb(255, 64, 76),
-                inset 0px 0px 10px rgb(255, 64, 76);
+.active {
+    border: 3px solid rgb(225, 225, 225);
+    /* box-shadow: inset 0px 0px 5px rgb(225, 225, 225),
+                inset 0px 0px 10px rgb(225, 225, 225); */
+}
+.rb-1-active {
+    border: 3px solid rgb(255, 64, 76);
+    /* box-shadow: inset 0px 0px 5px rgb(255, 64, 76),
+                inset 0px 0px 10px rgb(255, 64, 76); */
 }
 
-.rb-2:active {
-    border: 2px solid rgb(255, 201, 0);
-    box-shadow: inset 0px 0px 5px rgb(255, 201, 0),
-                inset 0px 0px 10px rgb(255, 201, 0);
+.rb-2-active {
+    border: 3px solid rgb(255, 201, 0);
+    /* box-shadow: inset 0px 0px 5px rgb(255, 201, 0),
+                inset 0px 0px 10px rgb(255, 201, 0); */
 }
 
-.rb-3:active {
-    border: 2px solid rgb(90, 215, 0);
-    box-shadow: inset 0px 0px 5px rgb(90, 215, 0),
-                inset 0px 0px 10px rgb(90, 215, 0);
+.rb-3-active {
+    border: 3px solid rgb(90, 215, 0);
+    /* box-shadow: inset 0px 0px 5px rgb(90, 215, 0),
+                inset 0px 0px 10px rgb(90, 215, 0); */
 }
 
-.rb-4:active {
-    border: 2px solid rgb(166, 0, 243);
-    box-shadow: inset 0px 0px 5px rgb(166, 0, 243),
-                inset 0px 0px 10px rgb(166, 0, 243);
+.rb-4-active {
+    border: 3px solid rgb(166, 0, 243);
+    /* box-shadow: inset 0px 0px 5px rgb(166, 0, 243),
+                inset 0px 0px 10px rgb(166, 0, 243); */
 }
 
-.rb-5:active {
-    border: 2px solid rgb(0, 230, 233);
-    box-shadow: inset 0px 0px 5px rgb(0, 230, 233),
-                inset 0px 0px 10px rgb(0, 230, 233);
+.rb-5-active {
+    border: 3px solid rgb(0, 230, 233);
+    /* box-shadow: inset 0px 0px 5px rgb(0, 230, 233),
+                inset 0px 0px 10px rgb(0, 230, 233); */
 }
 
 button {
@@ -140,14 +178,26 @@ button {
     width: 15rem;
     height: 3rem;
     font-size: 2rem;
-    margin: 1rem;
+    margin-bottom: 1.25rem;
+    background-color: rgb(225, 225, 225);
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 3px 3px 3px rgba(68, 75, 90),
+                inset -3px -3px 3px rgba(15, 15, 15);
+}
+
+button:active {
+    padding-right: 3px;
+    padding-top: 3px;
+    box-shadow: inset 3px 3px 3px rgba(15, 15, 15),
+                inset -3px -3px 3px rgba(68, 75, 90);
 }
 
 /* REPORT CARD STUFF BELOW */
 
 .report-card {
     position: relative;
-    display: none;
+    display: flex;
     width: 1200px;
     color: white;
     font-family: 'Avenir';
@@ -172,6 +222,8 @@ button {
     display: flex;
     flex-direction: column;
     align-self: center;
+    text-align: center;
+    width: 80%;
 }
 
 .section-title {
@@ -183,6 +235,15 @@ button {
     font-size: 1.5rem;
 }
 
+.result {
+    text-decoration: underline;
+}
+
+.next-step {
+    margin-top: .5rem;
+    word-wrap: normal;
+}
+
 .assessor, .out-of {
     opacity: .65;
 }
@@ -190,7 +251,6 @@ button {
 .average-score {
     font-size: clamp(6rem, 9.5vw, 7.5rem);
     font-weight: bold;
-    color: rgb(204, 204, 22)
 }
 
 .graph-container {
@@ -201,7 +261,7 @@ button {
     margin: 1.5rem;
 }
 
-.graph-left, .graph-right, .graph-scores {
+.graph, .graph-scores, .graph-lines-container {
     place-self: center;
     position: relative;
     border-radius: 100%;
@@ -210,16 +270,31 @@ button {
     grid-column-start: 1;
 }
 
-.graph-left {
-    left: -2px;
+.graph {
     width: 90%;
-    background: conic-gradient(rgba(0, 0, 0, 0) 46%, rgb(68, 75, 90) 0);
 }
 
-.graph-right {
-    left: 2px;
-    width: 90%;
-    background: conic-gradient(rgb(204, 204, 22) 46%, rgba(0, 0, 0, 0) 0);
+.graph-lines-container {
+    place-self: center;
+}
+
+.graph-bar-1 {
+    position: absolute;
+    width: 4px;
+    height: 190px;
+    transform-origin: 2px 2px;
+    transform: rotate(180deg);
+    background-color: rgb(49, 54, 64);
+    z-index: 1;
+}
+
+.graph-bar-2 {
+    position: absolute;
+    width: 4px;
+    height: 190px;
+    transform-origin: 2px 0px;
+    background-color: rgb(49, 54, 64);
+    z-index: 1;
 }
 
 .graph-scores {
@@ -229,6 +304,7 @@ button {
     align-items: center;
     background-color: rgb(49, 54, 64);
     width: calc(90% * .775);
+    z-index: 2;
 }
 
 /* SCORECARD CONTAINER STUFF BELOW */
@@ -357,7 +433,7 @@ button {
         width: 65%;
     }
     
-    .graph-right {
+    .graph {
         width: 65%;
     }
 
