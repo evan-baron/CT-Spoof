@@ -250,6 +250,7 @@ function generateReport() {
     }
     if (!assessor.value == '' && !assessee.value == '' && tempArr.length == '') {
         alert("You must fill out at least one piece of feedback!")
+        document.getElementById('input-prompt1').focus()
         return
     }
 
