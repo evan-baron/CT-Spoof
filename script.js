@@ -222,6 +222,11 @@ function generateReport() {
     parentExceeds.setHTML('Exceeds & Far Exceeds Expectations');
 
     //tests if assessee and assessor filled out
+    if (!assessor.value == '' && !assessee.value == '' && feedbackArr.length == '') {
+        alert("You must fill out at least one piece of feedback!")
+        document.getElementById('input-prompt1').focus();
+        return;
+    }
     if (assessor.value == '') {
         if (assessee.value == '') {
             alert("You must input an Assessee!");
