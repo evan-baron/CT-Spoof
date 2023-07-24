@@ -260,10 +260,6 @@ button:active {
     font-size: 1.5rem;
 }
 
-.result {
-    text-decoration: underline;
-}
-
 .next-step {
     margin-top: .5rem;
     word-wrap: normal;
