@@ -426,6 +426,8 @@ function generateReport() {
         document.getElementById('exceeds-section').style.display = 'block';
     }
 
+    window.scrollTo(0, 0);
+
 };
 
 //function to check which row(s) has a rating 
