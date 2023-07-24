@@ -222,24 +222,35 @@ function generateReport() {
     parentExceeds.setHTML('Exceeds & Far Exceeds Expectations');
 
     //tests if assessee and assessor filled out
-    if (!assessor.value == '' && !assessee.value == '' && feedbackArr.length == '') {
-        alert("You must fill out at least one piece of feedback!")
-        document.getElementById('input-prompt1').focus();
-        return;
-    }
     if (assessor.value == '') {
         if (assessee.value == '') {
             alert("You must input an Assessee!");
             assessee.focus();
+            return
         } else {
             alert("You must input an Assessor!");
             assessor.focus();
+            return
         }
     } else {
         if (assessee.value == '') {
             alert("You must input an Assessee!");
             assessee.focus();
+            return
         } 
+    }
+
+    //validating if no feedback inputs filled out but assessee and assessor are filled out
+    const tempArr = [];
+    for (let i=1; i<11; i++) {
+        if (!document.getElementById('input-prompt'+i).value == '') {
+            tempArr.push(document.getElementById('input-prompt'+i).value)
+        }
+        console.log(tempArr)
+    }
+    if (!assessor.value == '' && !assessee.value == '' && tempArr.length == '') {
+        alert("You must fill out at least one piece of feedback!")
+        return
     }
 
     //push feedback into array
