@@ -689,6 +689,12 @@ button:active {
     .graph-container {
         margin: .5rem;
     }
+
+    button {
+        font-size: 1.5rem;
+        width: 10rem;
+        height: 2.5rem;
+    }
 }
 
 /* ANIMATION STUFF BELOW */
