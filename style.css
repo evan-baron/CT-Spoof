@@ -69,6 +69,8 @@ body {
 }
 
 .assess-input {
+    width: 27.5%;
+    min-width: 150px;;
     border-radius: 0%;
     border: none;
     height: 2.5rem;
@@ -165,6 +167,7 @@ body {
     /* box-shadow: inset 0px 0px 5px rgb(225, 225, 225),
                 inset 0px 0px 10px rgb(225, 225, 225); */
 }
+
 .rb-1-active {
     border: 3px solid rgb(255, 64, 76);
     /* box-shadow: inset 0px 0px 5px rgb(255, 64, 76),
@@ -342,6 +345,7 @@ button:active {
 }
 
 .prompts-container {
+    box-sizing: border-box;
     width: 90%;
     padding: 1.5rem 3rem;
     display: flex;
@@ -392,6 +396,7 @@ button:active {
     background: rgb(0, 230, 233);
 }
 
+/* flipping phone landscape */
 @media screen and (max-width: 800px) and (max-height: 400px) {
     
     body::-webkit-scrollbar {
@@ -414,6 +419,7 @@ button:active {
     }
 
     .prompts-container {
+        box-sizing: border-box;
         padding: 0px;
     }
 
@@ -422,6 +428,8 @@ button:active {
     }
 
     .scorecard-container {
+        box-sizing: border-box;
+        height: 100vh;
         overflow-y: scroll;
     }
 
@@ -448,7 +456,7 @@ button:active {
     }
 
     .graph-container {
-        margin: 1rem;
+        margin: .5rem;
     }
 
     .graph-left {
@@ -467,29 +475,188 @@ button:active {
         font-size: clamp(4.5rem, 6.5vw, 6rem);
     }
 
+    .graph-bar-1, .graph-bar-2 {
+        height: 110px;
+    }
+
+    /* FEEDBACK FORM STUFF */
+    .page-container {
+        justify-content: flex-start;
+    }
+
+    .feedback-container {
+        width: 100%;
+    }
+
+    .input-form {
+        width: 100%;
+    }
+    
+    .button-container {
+        width: 100%;
+    }
+
+    .result {
+        font-size: 1.25rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .next-step {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1.5rem;
+        width: 10rem;
+        height: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .feedback-container > .section-title {
+        font-size: 2rem;
+    }
+
+    .input-prompt {
+        width: 90%;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .assess-input {
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 1rem !important;
+    }
+
+    .radio-row {
+        width: 40%;
+        justify-content: normal;
+        gap: .5rem;
+    }
+
+    .radio-button {
+        min-width: 1.75rem;
+    }
+
+    .rb-1-active {
+        border: 2px solid rgb(255, 64, 76);
+        /* box-shadow: inset 0px 0px 5px rgb(255, 64, 76),
+                    inset 0px 0px 10px rgb(255, 64, 76); */
+    }
+    
+    .rb-2-active {
+        border: 2px solid rgb(255, 201, 0);
+        /* box-shadow: inset 0px 0px 5px rgb(255, 201, 0),
+                    inset 0px 0px 10px rgb(255, 201, 0); */
+    }
+    
+    .rb-3-active {
+        border: 2px solid rgb(90, 215, 0);
+        /* box-shadow: inset 0px 0px 5px rgb(90, 215, 0),
+                    inset 0px 0px 10px rgb(90, 215, 0); */
+    }
+    
+    .rb-4-active {
+        border: 2px solid rgb(166, 0, 243);
+        /* box-shadow: inset 0px 0px 5px rgb(166, 0, 243),
+                    inset 0px 0px 10px rgb(166, 0, 243); */
+    }
+    
+    .rb-5-active {
+        border: 2px solid rgb(0, 230, 233);
+        /* box-shadow: inset 0px 0px 5px rgb(0, 230, 233),
+                    inset 0px 0px 10px rgb(0, 230, 233); */
+    }
+    
+}
+
+@media screen and (max-width: 615px) {
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .page-container {
+        width: 100%;
+        justify-content: normal;
+    }
+
+    .input-form {
+        width: 100%;
+    }
+
+    .input-prompt {
+        width: 90%;
+    }
+
+    .radio-row {
+        width: 90%;
+        gap: clamp(1.5rem, 2rem, 2.5rem);
+    }
+
+    .prompt-radio-container {
+        flex-direction: column;
+        gap: .25rem;
+    }
+
+    .assessor-container {
+        flex-direction: column;
+    }
+
+    .assess-input {
+        width: 50%;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
 
     .page-container {
+        min-width: 360px;
         box-sizing: border-box;
         width: 100%;
-        min-height: 100vh;
         margin: 0px !important;
         padding: 0px !important;
     }
 
     .report-card {
+        min-width: 360px;
         flex-direction: column;
         width: 100%;
         box-shadow: none;
     }
 
     .chart-container, .scorecard-container {
+        min-width: 360px;
         width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     .prompts-container {
+        box-sizing: border-box;
         padding: 0px;
     }
 
@@ -499,9 +666,21 @@ button:active {
     }
 
     .scorecard-container {
+        min-width: 360px;
         padding-top: 1rem;
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+        margin: 0;
     }
     
+    .button-container {
+        min-width: 360px;
+        width: 100%;
+        font-size: 1.5rem;
+        gap: 1rem;
+        padding: .25rem 1rem;
+    }
 }
 
 /* ANIMATION STUFF BELOW */
