@@ -165,53 +165,53 @@ body {
 }
 
 #radio-row-1 > .rb-1::before {
-        content: "Poor";
-        position: absolute;
-        text-align: center;
-        top: calc(-1rem - 2px);
-        font-size: .75rem;
-        color: rgba(225, 225, 225, .5);
-        z-index: 5
+    content: "Poor";
+    position: absolute;
+    text-align: center;
+    top: calc(-1rem - 2px);
+    font-size: .75rem;
+    color: rgba(225, 225, 225, .5);
+    z-index: 5
 }
 
 #radio-row-1 > .rb-2::before {
-        content: "Average";
-        position: absolute;
-        text-align: center;
-        top: calc(-1rem - 2px);
-        font-size: .75rem;
-        color: rgba(225, 225, 225, .5);
-        z-index: 5
+    content: "Average";
+    position: absolute;
+    text-align: center;
+    top: calc(-1rem - 2px);
+    font-size: .75rem;
+    color: rgba(225, 225, 225, .5);
+    z-index: 5
 }
 
 #radio-row-1 > .rb-3::before {
-        content: "Great";
-        position: absolute;
-        text-align: center;
-        top: calc(-1rem - 2px);
-        font-size: .75rem;
-        color: rgba(225, 225, 225, .5);
-        z-index: 5
+    content: "Great";
+    position: absolute;
+    text-align: center;
+    top: calc(-1rem - 2px);
+    font-size: .75rem;
+    color: rgba(225, 225, 225, .5);
+    z-index: 5
 }
 
 #radio-row-1 > .rb-4::before {
-        content: "Amazing";
-        position: absolute;
-        text-align: center;
-        top: calc(-1rem - 2px);
-        font-size: .75rem;
-        color: rgba(225, 225, 225, .5);
-        z-index: 5
+    content: "Amazing";
+    position: absolute;
+    text-align: center;
+    top: calc(-1rem - 2px);
+    font-size: .75rem;
+    color: rgba(225, 225, 225, .5);
+    z-index: 5
 }
 
 #radio-row-1 > .rb-5::before {
-        content: "Godlike";
-        position: absolute;
-        text-align: center;
-        top: calc(-1rem - 2px);
-        font-size: .75rem;
-        color: rgba(225, 225, 225, .5);
-        z-index: 5
+    content: "Godlike";
+    position: absolute;
+    text-align: center;
+    top: calc(-1rem - 2px);
+    font-size: .75rem;
+    color: rgba(225, 225, 225, .5);
+    z-index: 5
 }
 
 .active {
