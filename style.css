@@ -164,9 +164,7 @@ body {
     border: 3px solid rgb(49, 54, 64);
 }
 
-#radio-row-1 {
-
-    .rb-1::before {
+#radio-row-1 > .rb-1::before {
         content: "Poor";
         position: absolute;
         text-align: center;
@@ -174,8 +172,9 @@ body {
         font-size: .75rem;
         color: rgba(225, 225, 225, .5);
         z-index: 5
-    }
-    .rb-2::before {
+}
+
+#radio-row-1 > .rb-2::before {
         content: "Average";
         position: absolute;
         text-align: center;
@@ -183,9 +182,9 @@ body {
         font-size: .75rem;
         color: rgba(225, 225, 225, .5);
         z-index: 5
-    }
+}
 
-    .rb-3::before {
+#radio-row-1 > .rb-3::before {
         content: "Great";
         position: absolute;
         text-align: center;
@@ -193,9 +192,9 @@ body {
         font-size: .75rem;
         color: rgba(225, 225, 225, .5);
         z-index: 5
-    }
+}
 
-    .rb-4::before {
+#radio-row-1 > .rb-4::before {
         content: "Amazing";
         position: absolute;
         text-align: center;
@@ -203,9 +202,9 @@ body {
         font-size: .75rem;
         color: rgba(225, 225, 225, .5);
         z-index: 5
-    }
+}
 
-    .rb-5::before {
+#radio-row-1 > .rb-5::before {
         content: "Godlike";
         position: absolute;
         text-align: center;
@@ -213,8 +212,6 @@ body {
         font-size: .75rem;
         color: rgba(225, 225, 225, .5);
         z-index: 5
-    }
-
 }
 
 .active {
