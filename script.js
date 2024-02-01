@@ -207,19 +207,19 @@ function generateReport() {
     while (parentMissed.firstChild) {
         parentMissed.firstChild.remove();
     }
-    parentMissed.setHTML('Missed & Below Expectations');
+    parentMissed.innerHTML = 'Missed & Below Expectations';
 
     const parentMeets = document.getElementById('meets-section');
     while (parentMeets.firstChild) {
         parentMeets.firstChild.remove();
     }
-    parentMeets.setHTML('Meets Expectations');
+    parentMeets.innerHTML = 'Meets Expectations';
 
     const parentExceeds = document.getElementById('exceeds-section');
     while (parentExceeds.firstChild) {
         parentExceeds.firstChild.remove();
     }
-    parentExceeds.setHTML('Exceeds & Far Exceeds Expectations');
+    parentExceeds.innerHTML = 'Exceeds & Far Exceeds Expectations';
 
     //tests if assessee and assessor filled out
     if (assessor.value == '') {
@@ -278,10 +278,10 @@ function generateReport() {
     }
 
     //setting assessee name
-    document.getElementById('assessee-out').setHTML(assessee.value);
+    document.getElementById('assessee-out').innerHTML = assessee.value;
 
     //setting assessor name
-    document.getElementById('assessor-out').setHTML('Assessed by '+assessor.value);
+    document.getElementById('assessor-out').innerHTML = 'Assessed by '+assessor.value;
 
     //setting the score
     for (let i=0; i<feedbackArr.length; i++) {
@@ -289,7 +289,7 @@ function generateReport() {
     }
     averageScore = Math.round(10*averageScore)/10;
     averageScorePercent = averageScore/5;
-    document.getElementById('average-score').setHTML(averageScore);
+    document.getElementById('average-score').innerHTML = averageScore;
 
     //move graph bar mask
     document.getElementById('graph-bar-2').style.transform = `rotate(${180+(360*averageScore/5)}deg)`
@@ -320,8 +320,8 @@ function generateReport() {
     //setting the results and next steps
     for (let i=0; i<scoreResults.length; i++) {
         if (scoreResults[i].scorefloor <= averageScore && averageScore < scoreResults[i].scoreceiling) {
-            document.getElementById('result').setHTML(scoreResults[i].evaluation);
-            document.getElementById('next-step').setHTML(scoreResults[i].nextstep[Math.floor(Math.random()*scoreResults[i].nextstep.length)]);
+            document.getElementById('result').innerHTML = scoreResults[i].evaluation;
+            document.getElementById('next-step').innerHTML = scoreResults[i].nextstep[Math.floor(Math.random()*scoreResults[i].nextstep.length)];
         }
     }
 
@@ -365,8 +365,8 @@ function generateReport() {
         promptDiv.setAttribute('class', 'prompt')
         document.getElementById('missed-line'+i).appendChild(promptDiv)
         
-        document.getElementById('missed-line'+i).children[0].setHTML(missed[i].rating)
-        document.getElementById('missed-line'+i).children[1].setHTML(missed[i].feedback)
+        document.getElementById('missed-line'+i).children[0].innerHTML = missed[i].rating
+        document.getElementById('missed-line'+i).children[1].innerHTML = missed[i].feedback
     }
 
     //meets data
@@ -384,8 +384,8 @@ function generateReport() {
         promptDiv.setAttribute('class', 'prompt')
         document.getElementById('meets-line'+i).appendChild(promptDiv)
         
-        document.getElementById('meets-line'+i).children[0].setHTML(meets[i].rating)
-        document.getElementById('meets-line'+i).children[1].setHTML(meets[i].feedback)
+        document.getElementById('meets-line'+i).children[0].innerHTML = meets[i].rating
+        document.getElementById('meets-line'+i).children[1].innerHTML = meets[i].feedback
     }
 
     //exceeds data
@@ -403,8 +403,8 @@ function generateReport() {
         promptDiv.setAttribute('class', 'prompt')
         document.getElementById('exceeds-line'+i).appendChild(promptDiv)
         
-        document.getElementById('exceeds-line'+i).children[0].setHTML(exceeds[i].rating)
-        document.getElementById('exceeds-line'+i).children[1].setHTML(exceeds[i].feedback)
+        document.getElementById('exceeds-line'+i).children[0].innerHTML = exceeds[i].rating
+        document.getElementById('exceeds-line'+i).children[1].innerHTML = exceeds[i].feedback
     }
 
     //shows score sections
